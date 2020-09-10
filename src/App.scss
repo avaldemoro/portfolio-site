@@ -1,0 +1,40 @@
+$pri-color: #282c34;
+$sec-color: #ffffff;
+$ter-color: #50dba6;
+$nav-color: #1616256b;
+
+body {
+    font-family: 'Karla', sans-serif;
+    background-color: $pri-color;
+    color: $sec-color;
+    font-size: 18px;
+}
+
+/* NAVIGATION BAR *********************************************************************************/
+.Navbar {
+    background-color: $nav-color;
+    padding: 2rem;
+    height: 100%;
+    min-width: 5rem;
+    width: 5rem;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+
+    .NavbarLogo {
+        margin-right: 0;
+    }
+
+    .NavbarItems {
+        font-size: 1.5rem;
+        align-items: center;
+        flex-direction: column;
+        padding-top: 2rem;
+
+        .NavItem {
+            padding: 1rem 0;
+            color: $ter-color;
+        }
+    }
+}
+
