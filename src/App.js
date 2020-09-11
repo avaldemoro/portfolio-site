@@ -7,10 +7,14 @@ import Nav from 'react-bootstrap/Nav';
 import { FaHome, FaLaptopCode, FaRegAddressCard } from 'react-icons/fa';
 
 class App extends Component {
+    
     constructor(props) {
         super(props);
-        this.state = { apiResponse: "" };
+        this.state = { 
+            apiResponse: ""
+        };
     }
+
     
     callAPI() {
         fetch("/testAPI")
@@ -28,9 +32,16 @@ class App extends Component {
                 <Navbar className="Navbar" variant="dark">
                     <Navbar.Brand className="NavbarLogo" href="#home">AV</Navbar.Brand>
                     <Nav className="NavbarItems">
-                        <Nav.Link className="NavItem" href="#deets"><FaHome/></Nav.Link>
-                        <Nav.Link className="NavItem" href="#deets"><FaLaptopCode/></Nav.Link>
-                        <Nav.Link className="NavItem" eventKey={3} href="#memes"><FaRegAddressCard/></Nav.Link>
+                        <Nav.Link navlabel="Home" id="HomeNavButton" className="NavItem" href="#deets">
+                            <FaHome/>
+                        </Nav.Link>
+                        <Nav.Link navlabel="Work"  id="WorkNavButton" className="NavItem" href="#deets">
+                            <FaLaptopCode/>
+                        </Nav.Link>
+                        <Nav.Link navlabel="Contact" id="ContactNavButton" className="NavItem" href="#memes">
+                            <FaRegAddressCard/>
+                        </Nav.Link>   
+                 
                     </Nav>
                 </Navbar>
                 <Container>
@@ -42,5 +53,6 @@ class App extends Component {
         );
     }   
 }
+
 
 export default App;
