@@ -1,61 +1,122 @@
 $pri-color: #282c34;
 $sec-color: #ffffff;
 $ter-color: #50dba6;
-$nav-color: #1616256b;
+$nav-color: #1b2027;
+$transition-speed: 600ms;
 
-body {
+:root {
     font-family: 'Karla', sans-serif;
+    font-size: 16px;
+}
+body {
     background-color: $pri-color;
     color: $sec-color;
-    font-size: 18px;
+    margin: 0;
+    padding: 0;
+}
+.Main {
+    margin-left: 5rem;
+    padding: 1rem;
 }
 
 /* NAVIGATION BAR *********************************************************************************/
 .Navbar {
     background-color: $nav-color;
-    padding: 2rem;
-    height: 100%;
-    min-width: 6rem;
-    width: 6rem;
-    flex-direction: column;
-    justify-content: flex-start;
     position: fixed;
+    align-items: center;
+    flex-direction: column;
+    font-size: 2rem;
+    padding: 0;
+    margin: 0;
+    transition: width 600ms ease;
+    width: 5rem;
+    overflow: hidden;
 
+   
     .NavbarLogo {
-        margin-right: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+        display: inline;
+        position: absolute;
+        left: -999px;
     }
 
+    &:hover {
+        .NavbarLogo {
+            left: 0;
+        } 
+        .NavItemText {
+            display: inline;
+            margin-left: 2.5rem;
+            font-size: 1rem;
+        }
+    }
+    .NavItemText {
+        display: none;
+        font-size: 1rem;
+        margin-top: -0.25rem
+    }
     .NavbarItems {
-        font-size: 1.5rem;
-        align-items: center;
+        list-style: none;
+        padding: 3rem 0 0;
+        margin: 0;
+        display: flex;
         flex-direction: column;
-        padding-top: 2rem;
+        height: 100%;
+        width: 100%;
 
         .NavItem {
-            color: $ter-color;
-            border-radius: 2rem 0 0 2rem;
-            margin: 0.5em;
-            padding: 1rem;
-            width: 3.5rem;
-            &:hover, &:focus{
-                z-index: 0;
+            width: 100%;
+            padding: 1rem 1.5rem 1.5rem;
+            align-items: center;
+            white-space: nowrap;
 
+            .NavItemText:hover {
+                text-decoration: underline;
+            }
+            &:last-child {
+                margin-top: auto;
+            }
+            &:hover {
+                filter: grayscale(0%) opacity(1);
+                background: $pri-color;
                 color: $ter-color;
-                background-color: #313542;
+                transition: $transition-speed;   
 
+                
             }
-            &:hover::after, &:focus::after {
-                content: attr(navlabel);
-                z-index: 1;
-                box-shadow: 0 10px 40px #20242e8f;
-                margin-top: -1rem;
-                padding: 1rem 2rem;
-                color: $ter-color;
-                background-color: #313542;
-                position: absolute;
-                width: 10rem;
-                border-radius: 0 2rem 2rem 0;
-            }
+            
+            
         }
     }
 }
+@media (min-width: 992px) {  
+    .Navbar {
+        height: 100vh;
+
+
+        &:hover {
+            width: 16rem;
+
+        }
+    }
+    .NavbarItems {
+        top: 0;
+        height: 100vh;
+        width: 5rem;
+    }
+}
+
+/* RESPONSIVE BREAKPOINTS *************************************************************************/
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {  }
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {  }
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {  }
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {  }
