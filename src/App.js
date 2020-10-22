@@ -1,27 +1,22 @@
-import React, {Component} from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.scss';
-import Container from 'react-bootstrap/Container';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import { FaHome, FaLaptopCode, FaRegAddressCard, FaSun } from 'react-icons/fa';
+import React, { Component } from 'react';
+import './sass/main.scss';
 
 class App extends Component {
-    
+
     constructor(props) {
         super(props);
-        this.state = { 
+        this.state = {
             apiResponse: ""
         };
     }
 
-    
+
     callAPI() {
         fetch("/testAPI")
             .then(res => res.text())
             .then(res => this.setState({ apiResponse: res }));
     }
-    
+
     componentDidMount() {
         this.callAPI();
     }
@@ -29,132 +24,183 @@ class App extends Component {
     render() {
         return (
             <>
-                <Navbar className="Navbar" variant="dark">
-                    <Navbar.Brand className="NavbarLogo" href="#home">AV</Navbar.Brand>
-
-                    <Nav className="NavbarItems">
-                        <Nav.Link navlabel="Home" id="HomeNavButton" className="NavItem" href="#">
-                            <span className="NavLinkContent"><FaHome/><span className="NavItemText">Home</span></span>
-                        </Nav.Link>
-                        <Nav.Link navlabel="Work"  id="WorkNavButton" className="NavItem" href="#">
-                            <span className="NavLinkContent"><FaLaptopCode/><span className="NavItemText">Work</span></span>
-                        </Nav.Link>
-                        <Nav.Link navlabel="Contact" id="ContactNavButton" className="NavItem" href="#">
-                        <span className="NavLinkContent"><FaRegAddressCard/><span className="NavItemText">Contact Me</span></span>
-                        </Nav.Link>   
-                        <Nav.Link navlabel="ColorToggle" id="ColorToggleButton" className="NavItem" href="#">
-                        <span className="NavLinkContent"><FaSun /><span className="NavItemText">Dark Mode</span></span>
-                        </Nav.Link>   
-                    </Nav>
-                </Navbar>
-                <Container fluid className="Main">
-
-                    <h1>CSS is Cool</h1>
-
-                    <p>
-                        I'm baby kale chips affogato ennui lumbersexual, williamsburg paleo quinoa
-                        iceland normcore tumeric. Kitsch coloring book retro, seitan schlitz
-                        tattooed biodiesel vexillologist neutra. Synth mumblecore deep v, umami
-                        selfies normcore gluten-free snackwave. Seitan ramps drinking vinegar
-                        venmo keytar, humblebrag VHS post-ironic tacos godard pour-over.
-                    </p>
-                    <p>
-                        Sartorial kogi taxidermy, kickstarter synth yr irony ennui everyday carry
-                        retro helvetica stumptown cloud bread squid echo park. Etsy cloud bread
-                        sartorial quinoa tacos beard mumblecore shaman tumblr pop-up. Twee retro
-                        fingerstache af helvetica pabst 8-bit leggings taiyaki portland ramps tbh
-                        tumblr vinyl. Neutra humblebrag bushwick portland subway tile plaid, offal
-                        scenester flexitarian cliche squid small batch palo santo. Palo santo meh
-                        adaptogen +1 3 wolf moon, listicle brunch ethical fanny pack everyday
-                        carry fam. Offal fingerstache taxidermy, man bun venmo PBR&amp;B helvetica
-                        thundercats everyday carry tote bag artisan cray wolf jianbing.
-                    </p>
-                    <p>
-                        Taxidermy thundercats whatever austin. VHS helvetica ethical, dreamcatcher
-                        enamel pin YOLO shabby chic locavore man bun crucifix pabst chillwave
-                        pop-up vegan. Air plant mlkshk ethical echo park tumeric, whatever
-                        crucifix godard scenester locavore pork belly yuccie vape. +1 gochujang
-                        put a bird on it, pork belly whatever selfies vaporware occupy banh mi
-                        normcore VHS. Cornhole normcore hashtag tilde. Hell of yr try-hard DIY raw
-                        denim banjo, enamel pin irony polaroid copper mug tofu. Dreamcatcher lomo
-                        literally 90's before they sold out, 3 wolf moon banh mi seitan chambray
-                        cliche offal tote bag occupy pug.
-                    </p>
-                    <p>
-                        Post-ironic hot chicken salvia yr yuccie ugh cold-pressed keffiyeh franzen
-                        viral taxidermy mustache slow-carb crucifix vape. Taiyaki yuccie hell of
-                        tacos PBR&amp;B, kitsch meggings tbh truffaut kickstarter mixtape af kogi.
-                        Fingerstache vegan tofu waistcoat gentrify cray. Drinking vinegar 3 wolf
-                        moon health goth craft beer master cleanse. Letterpress health goth 8-bit
-                        chillwave craft beer brooklyn. Chicharrones master cleanse 8-bit,
-                        mumblecore copper mug messenger bag poutine lomo kale chips flannel. Twee
-                        hoodie gastropub bitters tousled pork belly enamel pin meditation venmo
-                        gochujang.
-                    </p>
-                    <p>
-                        Next level selfies cronut ethical. Tofu tumblr you probably haven't heard
-                        of them, man braid literally forage swag chillwave. Pug yr flannel
-                        tumeric. Coloring book yr chillwave snackwave, shoreditch shaman gentrify
-                        typewriter tumeric DIY copper mug small batch. Scenester waistcoat YOLO
-                        hexagon kombucha poke 8-bit meditation. Selvage scenester forage
-                        williamsburg. Hoodie fingerstache tacos mustache, hashtag quinoa next
-                        level sartorial craft beer retro disrupt lo-fi.
-                    </p>
-                    <p>
-                        YOLO twee keytar farm-to-table flexitarian cardigan polaroid lumbersexual
-                        adaptogen drinking vinegar echo park dreamcatcher. Brunch shoreditch
-                        dreamcatcher iPhone knausgaard plaid edison bulb letterpress ethical yr
-                        fanny pack. Typewriter portland woke glossier cronut, post-ironic migas
-                        gentrify letterpress cray brunch lyft 8-bit master cleanse. Pitchfork
-                        thundercats organic pour-over unicorn lomo.
-                    </p>
-                    <p>
-                        Ugh yr tacos aesthetic everyday carry, tumeric selvage cliche skateboard.
-                        Wolf truffaut enamel pin vexillologist poutine. Hoodie roof party pabst,
-                        cardigan letterpress af disrupt +1 subway tile chillwave live-edge
-                        meggings next level readymade. Master cleanse gentrify hashtag, stumptown
-                        fam single-origin coffee occupy dreamcatcher air plant viral vexillologist
-                        enamel pin meggings. Tumblr chambray pickled microdosing austin scenester
-                        green juice.
-                    </p>
-                    <p>
-                        Austin four dollar toast church-key, vaporware hoodie edison bulb jean
-                        shorts sustainable williamsburg plaid helvetica scenester lomo humblebrag.
-                        Meditation tumblr kickstarter ennui williamsburg taiyaki pabst pour-over.
-                        8-bit godard cred, chillwave enamel pin skateboard you probably haven't
-                        heard of them. Meditation before they sold out single-origin coffee swag
-                        try-hard jianbing slow-carb shaman leggings. Palo santo shabby chic
-                        whatever man bun. Master cleanse wayfarers single-origin coffee pork belly
-                        cronut, normcore cliche jianbing before they sold out tousled shabby chic
-                        af pop-up gentrify. Direct trade la croix vexillologist jianbing,
-                        flexitarian selvage try-hard stumptown polaroid shaman wayfarers poke
-                        ramps food truck swag.
-                    </p>
-                    <p>
-                        Pok pok lumbersexual wayfarers, direct trade leggings poutine truffaut
-                        kitsch. Seitan aesthetic master cleanse squid coloring book banh mi YOLO
-                        vegan locavore vexillologist readymade next level pop-up edison bulb.
-                        Selvage knausgaard literally, quinoa photo booth 3 wolf moon microdosing
-                        freegan yuccie. Truffaut gentrify lomo put a bird on it waistcoat. Ugh
-                        austin distillery, tbh actually pork belly snackwave artisan mixtape
-                        quinoa vexillologist pok pok polaroid listicle readymade.
-                    </p>
-                    <p>
-                        Hammock letterpress prism dreamcatcher truffaut shabby chic vice
-                        cold-pressed. Franzen pug fashion axe before they sold out, tumblr irony
-                        kogi actually af bushwick banh mi. Snackwave bicycle rights tofu
-                        dreamcatcher tote bag pour-over meditation raw denim fanny pack. Pop-up
-                        retro taiyaki meditation twee gastropub VHS etsy. Semiotics gochujang
-                        street art normcore, edison bulb farm-to-table pour-over taxidermy
-                        brooklyn.
-                    </p>
-                    <div>
-                        {/*<p className="App-intro">{this.state.apiResponse}</p>*/}
+                <section id="sidebar">
+                    <div class="inner">
+                        <nav>
+                            <ul>
+                                <li><a href="#intro">Welcome</a></li>
+                                <li><a href="#one">Who we are</a></li>
+                                <li><a href="#two">What we do</a></li>
+                                <li><a href="#three">Get in touch</a></li>
+                            </ul>
+                        </nav>
                     </div>
-                </Container>
+                </section>
+
+                <div id="wrapper">
+
+                    <section id="intro" class="wrapper style1 fullscreen fade-up">
+                        <div class="inner">
+                            <h1>Hyperspace</h1>
+                            <p>Just another fine responsive site template designed by <a href="http://html5up.net">HTML5 UP</a><br />
+							and released for free under the <a href="http://html5up.net/license">Creative Commons</a>.</p>
+                            <ul class="actions">
+                                <li><a href="#one" class="button scrolly">Learn more</a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="one" class="wrapper style2 spotlights">
+                        <section>
+                            <a href="/" class="image"><img src="images/pic01.jpg" alt="" data-position="center center" /></a>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Sed ipsum dolor</h2>
+                                    <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+                                    <ul class="actions">
+                                        <li><a href="generic.html" class="button">Learn more</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <a href="/" class="image"><img src="images/pic02.jpg" alt="" data-position="top center" /></a>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Feugiat consequat</h2>
+                                    <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+                                    <ul class="actions">
+                                        <li><a href="generic.html" class="button">Learn more</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                        <section>
+                            <a href="/" class="image"><img src="images/pic03.jpg" alt="" data-position="25% 25%" /></a>
+                            <div class="content">
+                                <div class="inner">
+                                    <h2>Ultricies aliquam</h2>
+                                    <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus.</p>
+                                    <ul class="actions">
+                                        <li><a href="generic.html" class="button">Learn more</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+
+                    <section id="two" class="wrapper style3 fade-up">
+                        <div class="inner">
+                            <h2>What we do</h2>
+                            <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+                            <div class="features">
+                                <section>
+                                    <span class="icon solid major fa-code"></span>
+                                    <h3>Lorem ipsum amet</h3>
+                                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                                </section>
+                                <section>
+                                    <span class="icon solid major fa-lock"></span>
+                                    <h3>Aliquam sed nullam</h3>
+                                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                                </section>
+                                <section>
+                                    <span class="icon solid major fa-cog"></span>
+                                    <h3>Sed erat ullam corper</h3>
+                                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                                </section>
+                                <section>
+                                    <span class="icon solid major fa-desktop"></span>
+                                    <h3>Veroeros quis lorem</h3>
+                                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                                </section>
+                                <section>
+                                    <span class="icon solid major fa-link"></span>
+                                    <h3>Urna quis bibendum</h3>
+                                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                                </section>
+                                <section>
+                                    <span class="icon major fa-gem"></span>
+                                    <h3>Aliquam urna dapibus</h3>
+                                    <p>Phasellus convallis elit id ullam corper amet et pulvinar. Duis aliquam turpis mauris, sed ultricies erat dapibus.</p>
+                                </section>
+                            </div>
+                            <ul class="actions">
+                                <li><a href="generic.html" class="button">Learn more</a></li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section id="three" class="wrapper style1 fade-up">
+                        <div class="inner">
+                            <h2>Get in touch</h2>
+                            <p>Phasellus convallis elit id ullamcorper pulvinar. Duis aliquam turpis mauris, eu ultricies erat malesuada quis. Aliquam dapibus, lacus eget hendrerit bibendum, urna est aliquam sem, sit amet imperdiet est velit quis lorem.</p>
+                            <div class="split style1">
+                                <section>
+                                    <form method="post" action="/">
+                                        <div class="fields">
+                                            <div class="field half">
+                                                <label for="name">Name</label>
+                                                <input type="text" name="name" id="name" />
+                                            </div>
+                                            <div class="field half">
+                                                <label for="email">Email</label>
+                                                <input type="text" name="email" id="email" />
+                                            </div>
+                                            <div class="field">
+                                                <label for="message">Message</label>
+                                                <textarea name="message" id="message" rows="5"></textarea>
+                                            </div>
+                                        </div>
+                                        <ul class="actions">
+                                            <li><a href="/" class="button submit">Send Message</a></li>
+                                        </ul>
+                                    </form>
+                                </section>
+                                <section>
+                                    <ul class="contact">
+                                        <li>
+                                            <h3>Address</h3>
+                                            <span>12345 Somewhere Road #654<br />
+											Nashville, TN 00000-0000<br />
+											USA</span>
+                                        </li>
+                                        <li>
+                                            <h3>Email</h3>
+                                            <a href="/">user@untitled.tld</a>
+                                        </li>
+                                        <li>
+                                            <h3>Phone</h3>
+                                            <span>(000) 000-0000</span>
+                                        </li>
+                                        <li>
+                                            <h3>Social</h3>
+                                            <ul class="icons">
+                                                <li><a href="/" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+                                                <li><a href="/" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+                                                <li><a href="/" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+                                                <li><a href="/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+                                                <li><a href="/" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </section>
+
+                </div>
+
+                <footer id="footer" class="wrapper style1-alt">
+                    <div class="inner">
+                        <ul class="menu">
+                            <li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                        </ul>
+                    </div>
+                </footer>
             </>
         );
-    }   
+    }
 }
 
 
